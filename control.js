@@ -3,28 +3,7 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
 /*===== MENU & NAVIGATION =====*/
-const showMenu = (toggleId, navId, closeId) => {
-    const toggle = $(`#${toggleId}`), nav = $(`#${navId}`);
-    const backdrop = $('#nav-backdrop');
-    const closeBtn = $(`#${closeId}`);
-    function openMenu() {
-        nav.classList.add('show');
-        backdrop.classList.add('show');
-        document.body.classList.add('menu-open');
-    }
-    function closeMenu() {
-        nav.classList.remove('show');
-        backdrop.classList.remove('show');
-        document.body.classList.remove('menu-open');
-    }
-    if(toggle && nav) toggle.addEventListener('click', openMenu);
-    if(closeBtn) closeBtn.addEventListener('click', closeMenu);
-    if(backdrop) backdrop.addEventListener('click', closeMenu);
-    $$('.nav__link').forEach(link => link.addEventListener('click', () => {
-        if (window.innerWidth <= 1024) closeMenu();
-    }));
-}
-showMenu('nav-toggle','nav-menu','nav-close');
+// Removed showMenu and its call to avoid conflicts with new hamburger logic
 
 /*===== SCROLL ACTIVE LINK =====*/
 window.addEventListener('scroll', () => {
@@ -402,6 +381,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             submitBtn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Sending...';
             submitBtn.disabled = true;
+            // Add logic to show 'Sent' after 2.5 seconds
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="bx bx-check"></i> Sent';
+                submitBtn.disabled = false;
+            }, 2500);
         });
     }
     
@@ -411,44 +395,6 @@ document.addEventListener('DOMContentLoaded', () => {
         img.addEventListener('load', () => {
             img.style.opacity = '1';
             img.style.transform = 'scale(1)';
-        });
-    });
-    
-    // Enhanced mobile menu
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const navBackdrop = document.getElementById('nav-backdrop');
-    
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-            document.body.classList.toggle('menu-open');
-        });
-        
-        if (navBackdrop) {
-            navBackdrop.addEventListener('click', () => {
-                navMenu.classList.remove('show');
-                document.body.classList.remove('menu-open');
-            });
-        }
-        
-        // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll('.nav__link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('show');
-                document.body.classList.remove('menu-open');
-            });
-        });
-    }
-    
-    // Add parallax effect to background elements
-    const bgElements = document.querySelectorAll('.bg-element');
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        bgElements.forEach((element, index) => {
-            const speed = 0.5 + (index * 0.1);
-            element.style.transform = `translateY(${scrolled * speed}px)`;
         });
     });
     
@@ -685,10 +631,17 @@ document.addEventListener('DOMContentLoaded', function() {
       element.textContent = displayValue;
     }, 16);
   }
-  const observerOptions = {
+  // Use a lower threshold and rootMargin for mobile
+  let observerOptions = {
     threshold: 0.5,
     rootMargin: '0px 0px -100px 0px'
   };
+  if (window.innerWidth <= 768) {
+    observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -30px 0px'
+    };
+  }
   const footerObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -743,6 +696,41 @@ document.addEventListener('DOMContentLoaded', function() {
     quote.setAttribute('tabindex', '0');
     quote.setAttribute('role', 'region');
     quote.setAttribute('aria-label', 'Inspirational quote');
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Enhanced mobile menu
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const navBackdrop = document.getElementById('nav-backdrop');
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMenu.classList.contains('show');
+      navMenu.classList.toggle('show');
+      document.body.classList.toggle('menu-open');
+      // Optionally, toggle an 'active' class on the hamburger icon
+      navToggle.classList.toggle('active', !isOpen);
+    });
+
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+        document.body.classList.remove('menu-open');
+        navToggle.classList.remove('active');
+      });
+    }
+
+    // Close menu when clicking on a link
+    const navLinks = navMenu.querySelectorAll('.nav__link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+        document.body.classList.remove('menu-open');
+        navToggle.classList.remove('active');
+      });
+    });
   }
 });
 
