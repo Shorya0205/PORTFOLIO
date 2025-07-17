@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="style.css">
+
+        <!-- ===== GOOGLE FONTS ===== -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <meta name="description" content="Shorya Gupta - Full-Stack Developer Portfolio. Explore projects, skills, and contact information.">
+        <meta name="keywords" content="Shorya Gupta, Portfolio, Full-Stack Developer, Web Developer, Projects, Skills, Contact">
+        <meta property="og:title" content="Shorya Gupta - Full-Stack Developer Portfolio">
+        <meta property="og:description" content="Explore projects, skills, and contact information for Shorya Gupta, a passionate full-stack developer.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://your-portfolio-url.com/">
+        <meta property="og:image" content="profile.jpg">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Shorya Gupta - Full-Stack Developer Portfolio">
+        <meta name="twitter:description" content="Explore projects, skills, and contact information for Shorya Gupta, a passionate full-stack developer.">
+        <meta name="twitter:image" content="profile.jpg">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <title>Portfolio responsive complete</title>
+        <style>
+        .home__spline-3d { position: relative !important; }
+        .home__spline-3d::after {
+          content: '';
+          position: absolute;
+          right: 10px;
+          bottom: 18px;
+          width: 150px;
+          height: 50px;
+          background: url('overlay.png') repeat;
+          z-index: 2;
+          pointer-events: none;
+          border-bottom-right-radius: 18px;
+        }
+        </style>
+    </head>
+    <body>
+        <!--===== SCROLL PROGRESS INDICATOR =====-->
+        <div class="scroll-progress">
+            <div class="scroll-progress-bar"></div>
+        </div>
+        
+
+        
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav">
+                <a href="#" class="nav__logo">
+                    <div class="nav__logo-icon"><i class='bx bx-code-alt'></i></div>
+                    <div class="nav__logo-text">
+                        <span class="nav__logo-name">Shorya Gupta</span>
+                        <span class="nav__logo-tagline">Full-Stack Developer</span>
+                    </div>
+                </a>
+                <div class="nav__toggle" id="nav-toggle"><i class='bx bx-menu'></i></div>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active"><i class='bx bxs-home'></i><span>Home</span></a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link"><i class='bx bxs-user-detail'></i><span>About</span></a></li>
+                        <li class="nav__item"><a href="#client-benefits" class="nav__link"><i class='bx bx-gift'></i><span>What You Get</span></a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link"><i class='bx bx-code-alt'></i><span>Skills</span></a></li>
+                        <li class="nav__item"><a href="#portfolio" class="nav__link"><i class='bx bxs-briefcase-alt-2'></i><span>Projects</span></a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link"><i class='bx bxs-envelope'></i><span>Contact</span></a></li>
+                    </ul>
+                    <div class="nav__actions">
+                        <a href="#contact" class="nav__cta"><i class='bx bx-paper-plane'></i><span>Hire Me</span></a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="nav__backdrop" id="nav-backdrop"></div>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home" id="home">
+                <div class="home__container">
+                    <div class="home__content">
+                        <h1 class="home__title">SHORYA<br>CODES</h1>
+                        <p class="home__subtitle">Full-Stack Developer & Problem Solver</p>
+                        <p class="home__description">I create digital experiences that matter. From concept to deployment, I bring ideas to life with clean code and innovative solutions.</p>
+                        <div class="home__buttons">
+                            <a href="#portfolio" class="home__button home__button--primary animate-in"><span>View My Work</span><i class='bx bx-right-arrow-alt'></i></a>
+                            <a href="#contact" class="home__button home__button--secondary animate-in"><span>Get In Touch</span><i class='bx bx-envelope'></i></a>
+                        </div>
+                    </div>
+                    <div class="home__visual">
+                      <div class="home__hero-quote">
+                        <blockquote>
+                          “No shortcuts. No copies. Just clean, original builds that belong to you.”
+                        </blockquote>
+                      </div>
+                    </div>
+                </div>
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-link">
+                        <span>Scroll Down</span>
+                        <i class='bx bx-down-arrow-alt'></i>
+                    </a>
+                </div>
+                <div class="home__background-elements">
+                    <div class="bg-element bg-element--1"></div>
+                    <div class="bg-element bg-element--2"></div>
+                    <div class="bg-element bg-element--3"></div>
+                </div>
+            </section>
+            
+            <!--===== ABOUT =====-->
+            <section class="about section" id="about">
+                <h2 class="section-title">About</h2>
+                <div class="separator-line"></div>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="assets/profile.webp" alt="Profile Photo">
+                    </div>
+
+                    <div>
+                        <h2 class="about__subtitle">I'm Shorya Gupta</h2>
+                        <span class="about__profession" id="typewriter"></span>
+                        <p class="about__text">I am a passionate Full-Stack Web Developer with a strong foundation in both frontend and backend technologies. I love creating responsive, user-friendly applications that solve real-world problems.</p>
+                        
+                        <div class="about__details">
+                            <div class="about__detail">
+                                <i class='bx bx-code-alt'></i>
+                                <span>Building cool stuff since 2021</span>
+                            </div>
+                            <div class="about__detail">
+                                <i class='bx bx-briefcase'></i>
+                                <span>50+ Projects Completed</span>
+                            </div>
+                            <div class="about__detail">
+                                <i class='bx bx-chip'></i>
+                                <span>Computer Science Graduate</span>
+                            </div>
+                        </div>
+
+                        <p class="about__text">When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+
+                        <div class="about__social">
+                            <a href="https://www.linkedin.com/in/shorya-gupta-059a34338" target="_blank" class="about__social-icon" aria-label="LinkedIn"><i class='bx bxl-linkedin-square' ></i></a>
+                            <a href="https://github.com/Shorya0205" target="_blank" class="about__social-icon" aria-label="GitHub"><i class='bx bxl-github' ></i></a>
+                            <a href="https://twitter.com/Shorya0205" target="_blank" class="about__social-icon" aria-label="Twitter"><i class='bx bxl-twitter' ></i></a>
+                            <a href="mailto:shoryacodes@gmail.com" class="about__social-icon" aria-label="Email"><i class='bx bx-envelope' ></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Skills</h2>
+                <div class="separator-line"></div>
+
+                <div class="skills__container bd-grid">
+                    <div class="skills__content">
+                        <div class="skills__category">
+                            <h3 class="skills__subtitle">Frontend Development</h3>
+                            <div class="skills__grid">
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bxl-html5'></i>
+                                    </div>
+                                    <span class="skill__name">HTML5</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="95"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bxl-css3'></i>
+                                    </div>
+                                    <span class="skill__name">CSS3</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="90"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bxl-javascript'></i>
+                                    </div>
+                                    <span class="skill__name">JavaScript</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bxl-react'></i>
+                                    </div>
+                                    <span class="skill__name">React.js</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="80"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bxl-bootstrap'></i>
+                                    </div>
+                                    <span class="skill__name">Bootstrap</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bx-palette'></i>
+                                    </div>
+                                    <span class="skill__name">Tailwind CSS</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="75"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills__category">
+                            <h3 class="skills__subtitle">Backend Development</h3>
+                            <div class="skills__grid">
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bxl-nodejs'></i>
+                                    </div>
+                                    <span class="skill__name">Node.js</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="80"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bx-server'></i>
+                                    </div>
+                                    <span class="skill__name">Express.js</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="75"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bx-code-alt'></i>
+                                    </div>
+                                    <span class="skill__name">Python</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="75"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bx-code-alt'></i>
+                                    </div>
+                                    <span class="skill__name">FastAPI</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="70"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skills__category">
+                            <h3 class="skills__subtitle">Database & Tools</h3>
+                            <div class="skills__grid">
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bx-data'></i>
+                                    </div>
+                                    <span class="skill__name">MongoDB</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="70"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bx-data'></i>
+                                    </div>
+                                    <span class="skill__name">SQL</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="65"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bxl-git'></i>
+                                    </div>
+                                    <span class="skill__name">Git</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="80"></div>
+                                    </div>
+                                </div>
+                                <div class="skill__card">
+                                    <div class="skill__icon">
+                                        <i class='bx bx-code-block'></i>
+                                    </div>
+                                    <span class="skill__name">C++</span>
+                                    <div class="skill__level">
+                                        <div class="skill__bar" data-level="70"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== WHAT CLIENT GETS =====-->
+            <section class="client-benefits section" id="client-benefits">
+                <h2 class="section-title">What Client Gets</h2>
+                <div class="separator-line"></div>
+
+                <div class="client-benefits__container bd-grid">
+                    <div class="client-benefits__card">
+                        <div class="client-benefits__content">
+                            <div class="client-benefits__icon">
+                                <i class='bx bx-devices'></i>
+                            </div>
+                            <h3 class="client-benefits__title">Responsive Design</h3>
+                            <p class="client-benefits__description">Your website will look perfect on all devices - desktop, tablet, and mobile. Every user gets the best experience regardless of their screen size.</p>
+                            <ul class="client-benefits__features">
+                                <li><i class='bx bx-check'></i> Mobile-first approach</li>
+                                <li><i class='bx bx-check'></i> Cross-browser compatibility</li>
+                                <li><i class='bx bx-check'></i> Fast loading times</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="client-benefits__card">
+                        <div class="client-benefits__content">
+                            <div class="client-benefits__icon">
+                                <i class='bx bx-code-alt'></i>
+                            </div>
+                            <h3 class="client-benefits__title">Modern Technology</h3>
+                            <p class="client-benefits__description">Built with the latest technologies and best practices to ensure your website is fast, secure, and future-proof.</p>
+                            <ul class="client-benefits__features">
+                                <li><i class='bx bx-check'></i> Latest frameworks</li>
+                                <li><i class='bx bx-check'></i> SEO optimized</li>
+                                <li><i class='bx bx-check'></i> Security best practices</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="client-benefits__card">
+                        <div class="client-benefits__content">
+                            <div class="client-benefits__icon">
+                                <i class='bx bx-support'></i>
+                            </div>
+                            <h3 class="client-benefits__title">24/7 Support</h3>
+                            <p class="client-benefits__description">I'm here to help you every step of the way. From initial concept to post-launch support, you'll have my full attention.</p>
+                            <ul class="client-benefits__features">
+                                <li><i class='bx bx-check'></i> Regular updates</li>
+                                <li><i class='bx bx-check'></i> Quick response time</li>
+                                <li><i class='bx bx-check'></i> Ongoing maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="client-benefits__card">
+                        <div class="client-benefits__content">
+                            <div class="client-benefits__icon">
+                                <i class='bx bx-palette'></i>
+                            </div>
+                            <h3 class="client-benefits__title">Custom Solutions</h3>
+                            <p class="client-benefits__description">Every project is unique. I create tailored solutions that perfectly match your brand and business requirements.</p>
+                            <ul class="client-benefits__features">
+                                <li><i class='bx bx-check'></i> Brand-aligned design</li>
+                                <li><i class='bx bx-check'></i> Scalable architecture</li>
+                                <li><i class='bx bx-check'></i> Future-ready features</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== PORTFOLIO =====-->
+            <section class="portfolio section" id="portfolio">
+                <h2 class="section-title">Recent Projects</h2>
+                <div class="separator-line"></div>
+
+                <div class="portfolio__container bd-grid">
+                    <div class="portfolio__card">
+                        <a href="https://gym-responsive-site.vercel.app/" class="portfolio__img portfolio__img-link" target="_blank" rel="noopener">
+                            <img src="assets/gym1.webp" alt="Gym Project Screenshot" class="portfolio__img-slideshow" />
+                            <div class="portfolio__link">
+                                <button class="portfolio__view-btn" type="button">View Project</button>
+                            </div>
+                        </a>
+                        <a href="https://gym-responsive-site.vercel.app/" target="_blank" rel="noopener" class="portfolio__card-heading-link"><h4 class="portfolio__card-heading">FITFLEX - A gym in USA</h4></a>
+                    </div>
+                    
+                    <!-- Task Management App Card -->
+                    <div class="portfolio__card">
+                        <a href="https://petcare-responsive-site.vercel.app/" class="portfolio__img portfolio__img-link" target="_blank" rel="noopener">
+                            <div class="portfolio__img-placeholder"></div>
+                            <div class="portfolio__link">
+                                <button class="portfolio__view-btn" type="button">View Project</button>
+                            </div>
+                        </a>
+                        <a href="https://petcare-responsive-site.vercel.app/" target="_blank" rel="noopener" class="portfolio__card-heading-link"><h4 class="portfolio__card-heading">HOMEPAWS- A petcare place in USA</h4></a>
+                    </div>
+                    
+                    <!-- Weather Dashboard Card -->
+                    <div class="portfolio__card">
+                        <a href="https://menz-pi.vercel.app" class="portfolio__img portfolio__img-link" target="_blank" rel="noopener">
+                            <div class="portfolio__img-placeholder"></div>
+                            <div class="portfolio__link">
+                                <button class="portfolio__view-btn" type="button">View Project</button>
+                            </div>
+                        </a>
+                        <a href="https://menz-pi.vercel.app" target="_blank" rel="noopener" class="portfolio__card-heading-link"><h4 class="portfolio__card-heading">MENZ- A fashion brand in UK</h4></a>
+                    </div>
+                    
+                    <!-- Blog Platform Card -->
+                    <div class="portfolio__card">
+                        <a href="https://caffinity-pied.vercel.app" class="portfolio__img portfolio__img-link" target="_blank" rel="noopener">
+                            <div class="portfolio__img-placeholder"></div>
+                            <div class="portfolio__link">
+                                <button class="portfolio__view-btn" type="button">View Project</button>
+                            </div>
+                        </a>
+                        <a href="https://caffinity-pied.vercel.app" target="_blank" rel="noopener" class="portfolio__card-heading-link"><h4 class="portfolio__card-heading">CAFFINITY - A cafe in austin</h4></a>
+                    </div>
+                    
+                    <div class="portfolio__more">
+                        <p class="portfolio__more-text">...and many more amazing projects</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!--===== CALL TO ACTION =====-->
+            <section class="cta section">
+                <div class="cta__container bd-grid">
+                    <div class="cta__content">
+                        <h2 class="cta__title">Ready to Start Your Next Project?</h2>
+                        <p class="cta__text">Let's work together to bring your ideas to life. I'm always excited to take on new challenges and create amazing digital experiences.</p>
+                        <div class="cta__buttons">
+                            <a href="#contact" class="cta__button cta__button--primary animate-in">Get In Touch</a>
+                            <a href="#portfolio" class="cta__button cta__button--secondary animate-in">View My Work</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== TESTIMONIALS =====-->
+            <section class="testimonials section">
+              <h2 class="section-title">What Clients Say</h2>
+              <div class="separator-line"></div>
+              <div class="testimonials__container bd-grid">
+                <div class="testimonial__card">
+                  <div class="testimonial__content">
+                    <div class="testimonial__stars">
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="testimonial__text">"Shorya delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and technical expertise made the entire process smooth and professional."</p>
+                    <div class="testimonial__author">
+                      <div class="testimonial__avatar">
+                        <img src="assets/cm1.webp" alt="Sarah Johnson" class="testimonial__photo">
+                      </div>
+                      <div class="testimonial__info">
+                        <h4 class="testimonial__name">Ava Taylor</h4>
+                        <span class="testimonial__position">Texas, United States</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial__card">
+                  <div class="testimonial__content">
+                    <div class="testimonial__stars">
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="testimonial__text">"Working with Shorya was a game-changer for our business. He built a robust task management system that improved our productivity by 40%.<br>Highly recommended!"</p>
+                    <div class="testimonial__author">
+                      <div class="testimonial__avatar">
+                        <img src="assets/cm 2.webp" alt="Michael Chen" class="testimonial__photo">
+                      </div>
+                      <div class="testimonial__info">
+                        <h4 class="testimonial__name">Olivia Smith</h4>
+                        <span class="testimonial__position">Calgary, Canada</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial__card">
+                  <div class="testimonial__content">
+                    <div class="testimonial__stars">
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="testimonial__text">"Shorya's expertise in React and Node.js is outstanding. He created a beautiful, responsive website that perfectly represents our brand. Communication was excellent throughout."</p>
+                    <div class="testimonial__author">
+                      <div class="testimonial__avatar">
+                        <img src="assets/cm3.webp" alt="Emily Rodriguez" class="testimonial__photo">
+                      </div>
+                      <div class="testimonial__info">
+                        <h4 class="testimonial__name">Lucas Roy</h4>
+                        <span class="testimonial__position">Vancouver, Canada</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="testimonial__card">
+                  <div class="testimonial__content">
+                    <div class="testimonial__stars">
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                      <i class='bx bxs-star'></i>
+                    </div>
+                    <p class="testimonial__text">"The API Shorya developed for us is incredibly fast and well-documented. His problem-solving skills and technical knowledge are top-notch. Will definitely work with him again!"</p>
+                    <div class="testimonial__author">
+                      <div class="testimonial__avatar">
+                        <img src="assets/cm4.webp" alt="David Thompson" class="testimonial__photo">
+                      </div>
+                      <div class="testimonial__info">
+                        <h4 class="testimonial__name">Juhani Virtanen</h4>
+                        <span class="testimonial__position">Westend, Finland</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonials__more">
+                <p class="testimonials__more-text">...and many more satisfied clients</p>
+              </div>
+            </section>
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+                <div class="separator-line"></div>
+
+                <div class="contact__container bd-grid">
+                    <div class="contact__info">
+                        <h3 class="contact__subtitle">Let's Connect!</h3>
+                        <p class="contact__text">I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.</p>
+                        
+                        <div class="contact__details">
+                            <div class="contact__detail">
+                                <i class='bx bxs-envelope'></i>
+                                <div>
+                                    <h4>EMAIL</h4>
+                                    <span class="contact__text" style="font-size: 0.8rem;">shoryacodes@gmail.com</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact__detail">
+                                <i class='bx bxs-phone'></i>
+                                <div>
+                                    <h4>PHONE NO.</h4>
+                                    <span class="contact__text">+91 7818871232</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact__detail">
+                                <i class='bx bxs-map'></i>
+                                <div>
+                                    <h4>LOCATION</h4>
+                                    <span class="contact__text">Noida, UP, India</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact__social">
+                            <a href="https://www.linkedin.com/in/shorya-gupta-059a34338" target="_blank" class="contact__social-icon" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+                            <a href="https://github.com/Shorya0205" target="_blank" class="contact__social-icon" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                            <a href="https://twitter.com/Shorya0205" target="_blank" class="contact__social-icon" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                        </div>
+                    </div>
+
+                    <form action="" class="contact__form" id="contactForm">
+                        <div class="contact__inputs">
+                            <input type="text" name="user_name" placeholder="Name" class="contact__input" id="name" required>
+                            <input type="email" name="user_email" placeholder="Email" class="contact__input" id="email" required>
+                        </div>
+                        <input type="text" name="subject" placeholder="Subject" class="contact__input" id="subject" required>
+                        <textarea name="message" id="message" cols="0" rows="10" class="contact__input" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="contact__button">
+                            <span>Send Message</span>
+                            <i class='bx bx-send'></i>
+                        </button>
+                        <div id="form-status" style="margin-top:10px;"></div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer section">
+            <div class="footer__container">
+                <div class="footer__data">
+                    <h2 class="footer__title">SHORYA GUPTA</h2>
+                    <p class="footer__tagline">Full-Stack Developer & Problem Solver</p>
+                    <p class="footer__text">Passionate about creating digital experiences that matter. Let's build something amazing together!</p>
+                    <div class="footer__stats">
+                        <div class="footer__stat">
+                            <span class="footer__stat-number" data-target="3">0</span>
+                            <span class="footer__stat-label">Years<br>Experience</span>
+                        </div>
+                        <div class="footer__stat">
+                            <span class="footer__stat-number" data-target="50">0</span>
+                            <span class="footer__stat-label">Projects<br>Completed</span>
+                        </div>
+                        <div class="footer__stat">
+                            <span class="footer__stat-number" data-target="100">0</span>
+                            <span class="footer__stat-label">Client<br>Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="#home" class="footer__link" aria-label="Home"><i class='bx bxs-home'></i> Home</a></li>
+                        <li><a href="#about" class="footer__link"><i class='bx bxs-user-detail'></i> About</a></li>
+                        <li><a href="#skills" class="footer__link"><i class='bx bx-code-alt'></i> Skills</a></li>
+                        <li><a href="#portfolio" class="footer__link"><i class='bx bxs-briefcase-alt-2'></i> Portfolio</a></li>
+                        <li><a href="#contact" class="footer__link"><i class='bx bxs-envelope'></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Get In Touch</h3>
+                    <div class="footer__contact">
+                        <div class="footer__contact-item">
+                            <i class='bx bxs-envelope'></i>
+                            <a href="mailto:shoryacodes@gmail.com">shoryacodes@gmail.com</a>
+                        </div>
+                        <div class="footer__contact-item">
+                            <i class='bx bxs-phone'></i>
+                            <a href="tel:+91 7818871232" aria-label="Phone">+917818871232</a>
+                        </div>
+                        <div class="footer__contact-item">
+                            <i class='bx bxs-map'></i>
+                            <span>Noida, UP, India</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Connect With Me</h3>
+                    <p class="footer__social-text">Let's stay connected and build amazing things together!</p>
+                    <div class="footer__social">
+                        <a href="https://www.linkedin.com/in/shorya-gupta-059a34338" target="_blank" class="footer__social-link" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+                        <a href="https://github.com/Shorya0205" target="_blank" class="footer__social-link" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                        <a href="https://twitter.com/Shorya0205" target="_blank" class="footer__social-link" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                        <a href="mailto:shoryacodes@gmail.com" class="footer__social-link" aria-label="Email"><i class='bx bx-envelope'></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <p class="footer__copyright">© 2025 Shorya Gupta. All rights reserved.</p>
+                    <p class="footer__made-with">Made with <i class='bx bxs-heart'></i> and lots of ☕</p>
+                </div>
+            </div>
+        </footer>
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        
+
+        <!--===== MAIN JS =====-->
+        <script src="control.js"></script>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    </body>
+</html>
