@@ -1,4 +1,4 @@
-*===== GOOGLE FONTS =====*/
+/*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
 
 /*===== VARIABLES CSS =====*/
@@ -365,6 +365,7 @@ img{
   flex-direction: row;
   align-items: center;
   gap: 3rem;
+  flex-wrap: wrap;
 }
 @media screen and (max-width: 900px) {
   .home__container {
@@ -372,6 +373,11 @@ img{
     gap: 2rem;
     align-items: stretch;
     padding-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .home__content, .home__visual {
+    width: 100%;
+    min-width: 0;
   }
 }
 .home__content{
@@ -4264,6 +4270,39 @@ html {
 @media screen and (max-width: 480px) {
   .footer__links li {
     margin-bottom: 0.3rem !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .nav__menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .nav__actions {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin: 1.5rem 0 0 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .home {
+    padding-top: 4.5rem; /* Add space for fixed header and avoid title being hidden */
+  }
+  .home__title {
+    margin-top: 0.5rem;
+    margin-left: 0;
+    font-size: 2.8rem;
+    text-align: center;
   }
 }
 
